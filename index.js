@@ -130,6 +130,8 @@ function checkForCollisions() {
       score++
       scoreDisplay.innerHTML = score
       if (blocks.length == 0) {
+
+        scoreDisplay.style.color = 'green'
         scoreDisplay.innerHTML = 'You Win!'
         clearInterval(timerId)
         document.removeEventListener('keydown', moveUser)
@@ -155,6 +157,7 @@ function checkForCollisions() {
   //game over
   if (ballCurrentPosition[1] <= 0) {
     clearInterval(timerId)
+    scoreDisplay.style.color = 'red'
     scoreDisplay.innerHTML = 'You lose!'
     document.removeEventListener('keydown', moveUser)
   }
